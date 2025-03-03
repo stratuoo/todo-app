@@ -1,38 +1,95 @@
+/* Define theme variables */
+:root {
+  --primary-color: #4f46e5;      /* Indigo-600 */
+  --accent-color: #10b981;       /* Emerald-500 */
+  --background-color: #ffffff;
+  --card-background: #f3f4f6;     /* Gray-100 */
+  --text-color: #111827;         /* Gray-900 */
+  --muted-text: #6b7280;         /* Gray-500 */
+  --border-color: #e5e7eb;       /* Gray-200 */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* Global reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* App container styling */
 .App {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--background-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow-color);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Input field styling */
+input {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input:focus {
+  border-color: var(--primary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Unordered list styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Task list item styling */
+li {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px 0;
+  background: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed);
 }
 
-.App-link {
-  color: #61dafb;
+li:hover {
+  transform: translateX(5px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Completed task style */
+.completed {
+  text-decoration: line-through;
+  color: var(--muted-text);
 }
